@@ -35,4 +35,32 @@
       </li>
     {% endif %}
   {% endfor %}
+  <li>
+    {% if shop.customer_accounts_enabled %}
+          <span class="header-bar__sep" aria-hidden="true">|</span>
+          <ul class="header-bar__module header-bar__module--list">
+            {% if customer %}
+              <li>
+                <a href="/account">{{ 'layout.customer.account' | t }}</a>
+              </li>
+              <li>
+                {{ 'layout.customer.log_out' | t | customer_logout_link }}
+              </li>
+            {% else %}
+              <li>
+                {{ 'layout.customer.log_in' | t | customer_login_link }}
+              </li>
+            {% endif %}
+          </ul>
+    {% endif %}
+  </li>
+  <li>
+     <div class="header-bar__module">
+          <a href="/cart" class="cart-toggle">
+            <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
+            {{ 'layout.cart.title' | t }}
+            <span class="cart-count header-bar__cart-count">{{ cart.item_count }} item(s)</span>
+          </a>
+        </div>
+  </li>
 </ul>

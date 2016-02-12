@@ -18,7 +18,7 @@
     {% comment %}<input type="hidden" name="type" value="product">{% endcomment %}
     <input type="search" name="q" value="{{ search.terms | escape }}" aria-label="{{ 'general.search.placeholder' | t }}" class="header-bar__search-input">
     <button type="submit" class="btn icon-fallback-text header-bar__search-submit">
-      <span class="icon icon-search" aria-hidden="true"></span>
+      <span aria-hidden="true">GO</span>
       <span class="fallback-text">{{ 'general.search.submit' | t }}</span>
     </button>
   </form>

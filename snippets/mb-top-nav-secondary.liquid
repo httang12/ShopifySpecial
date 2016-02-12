@@ -35,4 +35,11 @@
       </li>
     {% endif %}
   {% endfor %}
+  <li>
+    {% if settings.header_search_enable %}
+          <div class="header-bar__module header-bar__search">
+            {% include 'search-bar' with 'header' %}
+          </div>
+        {% endif %}
+  </li>
 </ul>
