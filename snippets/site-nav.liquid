@@ -1,3 +1,4 @@
+<div class="site-top-nav">
 {% comment %}
   List out your main-menu linklist (default)
 
@@ -35,25 +36,28 @@
       </li>
     {% endif %}
   {% endfor %}
-  <li>
+   
     {% if shop.customer_accounts_enabled %}
-          <span class="header-bar__sep" aria-hidden="true">|</span>
-          <ul class="header-bar__module header-bar__module--list">
+         
             {% if customer %}
-              <li>
+              <li class="site-nav--has-dropdown">
                 <a href="/account">{{ 'layout.customer.account' | t }}</a>
               </li>
-              <li>
+              <li class="site-nav--has-dropdown">
                 {{ 'layout.customer.log_out' | t | customer_logout_link }}
               </li>
             {% else %}
-              <li>
+              <li class="site-nav--has-dropdown">
                 {{ 'layout.customer.log_in' | t | customer_login_link }}
               </li>
             {% endif %}
-          </ul>
+    	
     {% endif %}
-  </li>
+  
+</ul>
+
+<ul class="site-nav top_nav_second_section">
+ 
   <li>
      <div class="header-bar__module">
           <a href="/cart" class="cart-toggle">
@@ -64,3 +68,4 @@
         </div>
   </li>
 </ul>
+</div>

@@ -4,7 +4,7 @@
   More info on linklists:
     - http://docs.shopify.com/themes/liquid-variables/linklists
 {% endcomment %}
-<ul class="site-nav" id="AccessibleNav">
+<ul class="site-nav mb-secondary-nav" id="AccessibleNav">
   {% for link in linklists.top-menu-2.links %}
     {% comment %}
       Create a dropdown menu by naming a linklist the same as a link in the parent nav
@@ -35,11 +35,17 @@
       </li>
     {% endif %}
   {% endfor %}
+  
+</ul>
+
+
+{% if settings.header_search_enable %}
+<ul class="mb-secondary-nav-right">
   <li>
-    {% if settings.header_search_enable %}
           <div class="header-bar__module header-bar__search">
             {% include 'search-bar' with 'header' %}
           </div>
-        {% endif %}
+
   </li>
 </ul>
+        {% endif %}

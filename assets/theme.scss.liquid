@@ -623,6 +623,32 @@ h6 {
   input {
     font-size: 0.85em;
   }
+  
+  .footer_top
+  {
+    
+    .grid__item
+    {
+      padding-left:0px;
+      
+      h4 {
+        border-bottom:solid #eaeaea 1px;
+        border-top:solid #eaeaea 1px;
+        padding-bottom:10px;
+        padding-top:10px;
+      }
+    }
+    
+    .grid-uniform
+    {
+      margin-left:0px;
+      .mb-footer-navigation li
+      {
+        float:left;
+        width:50%;
+      }
+    }
+  }
 }
 
 @if $colorBody == $colorHeader {
@@ -870,7 +896,7 @@ h6 {
   min-width: 100px;
   
   @include at-query($min, $large) {
-    max-width: 160px;
+    width: 350px;
     margin-left: 20px;
   }
   
@@ -881,7 +907,17 @@ h6 {
   @include at-query($max, $small) {
     margin: 12px 15px;
   }
-
+  
+  form {
+    border: solid black 1px;
+    border-radius: 15px;  
+  }
+  
+  input
+  {
+    border:none;
+  }
+  
   form,
   input,
   button {
@@ -895,11 +931,12 @@ h6 {
   float: left;
   background: transparent;
   border-color: black;
-  padding: 3px 0;
+  padding: 3px 12px;
 
   &:focus {
     background: transparent;
     border-color: transparent;
+    outline: none;
   }
 }
 
@@ -913,16 +950,17 @@ h6 {
 
 .supports-fontface {
   .header-bar__search-submit {
-    width: 20%;
+    width: 15%;
   }
 
   .header-bar__search-input[type="search"] {
-    width: 80%;
+    width: 85%;
   }
 
   @include at-query($max, $medium) {
     .header-bar__search-form {
       position: relative;
+      
     }
     
     .header-bar__search-submit {
